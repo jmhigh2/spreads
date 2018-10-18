@@ -13,15 +13,15 @@ conf = {
             'tools.staticdir.root': os.path.abspath(os.getcwd())
 },
 
+'global': {
+        'server.socket_host': '0.0.0.0',
+        'server.socket_port': int(os.environ.get('PORT', 8080)),
+    },
+
 '/static': {
  'tools.staticdir.on': True,
  'tools.staticdir.dir': './public'
 }
 }
-
-#port = 8080
-port = int(os.environ.get("PORT"))
-
-cherrypy.config.update({'server.socket_port': port})
 
 cherrypy.quickstart(Index(), '/', conf)
