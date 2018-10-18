@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<title>Spread Calculator</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- D3 Js-->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+<body>
+<h1>Option Spread Calculator</h1>
+<div class="container-fluid">
+<form>
+<div class="form-group">
+<label for=""></label>
+<input type="text" id="stock_symb" value="AAPL" class="form-control" id="" placeholder="AAPL...."/>
+<p class="help-block">Type the symbol of a stock.</p>
+</div>
+</form>
+</div>
+
+<div class="container-fluid">
+<button id="quote_btn" onclick="getquote()" type="button" class="btn btn-primary" name="button">Get Quote</button>
+<span class=dropdown>
+<button class="btn btn-primary dropdown-toggle" type="button" id="strats" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Spread Strategies
+<span class="caret"></span>
+</button>
+<ul class="dropdown-menu" aria-labelledby="strats">
+<li><a onclick="bullcall()" href="#">Bull Call</a></li>
+<li><a onclick="bearcall()" href="#">Bear Call</a></li>
+<li><a onclick="bullput()" href="#">Bull Put</a></li>
+<li><a onclick="bearput()" href="#">Bear Put</a></li>
+</ul>
+</span>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6">
+<form class="form-inline">
+  <label for="rg-from">Final Price</label>
+  <div class="form-group">
+    <input type="range" id="rg-from1" name="rg-from" value="" class="form-control">
+  </div>
+  <!-- rest of form -->
+</form>
+<form class="form-inline">
+  <label for="rg-from">High Strike</label>
+  <div class="form-group">
+    <input type="range" id="rg-from2" name="rg-from" value="" class="form-control">
+  </div>
+  <!-- rest of form -->
+</form>
+<form class="form-inline">
+  <label for="rg-from">Low Strike</label>
+  <div class="form-group">
+    <input type="range" id="rg-from3" name="rg-from" value="" class="form-control">
+  </div>
+  <!-- rest of form -->
+</form>
+</div>
+<div class="col-lg-6">
+  <div class="container-fluid">
+  <span class="chart" id="chart1">
+  <svg width="500" height="500"><text></text></svg>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="container-fluid">
+<span class="num" id="quote">0</span>
+<span class="num" id="final_price">0</span>
+<span class="num" id="high_strike">0</span>
+<span class="num" id="low_strike">0</span>
+</div>
+<!--
+<svg width="200" height="200"><text></text></svg>
+<svg width="200" height="200"><text></text></svg>
+<svg width="200" height="200"><text></text></svg>
+-->
+</span>
+</div>
+
+
+<br>
+<div class="container-fluid">
+  <h4>To-Do</h4>
+  <ul>
+    <li>Chart</li>
+    <li>Chart for Spreads. Have sliders to adjust option strike price</li>
+    <li>Cheat Sheet for option greeks</li>
+    <li>Ability to draw multiple stocks</li>
+  </ul>
+</div>
+
+<script src="/static/js/spreads.js"></script>
+</body>
+</html>
