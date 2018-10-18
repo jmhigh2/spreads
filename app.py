@@ -19,4 +19,9 @@ conf = {
 }
 }
 
+#port = 8080
+port = os.environ.get("PORT")
+
+cherrypy.config.update({'server.socket_port': port})
+
 cherrypy.quickstart(Index(), '/', conf)
